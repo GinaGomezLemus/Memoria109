@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>MEMO44 - Leonidas Name</title>
+    <title>Memoria109</title>
 
-    <meta property="og:title" content="MEMO44 - Juego de Memoria">
+    <meta property="og:title" content="Memoria109 - Juego de Memoria">
     <meta property="og:description" content="¿Qué tan buena es tu memoria? Encuentra las parejas y completa el reto.">
-    <meta property="og:image" content="https://leonidasnamegomez.github.io/Memo44/miniatura.jpg">
-    <meta property="og:url" content="https://leonidasnamegomez.github.io/Memo44/">
+    <meta property="og:image" content="https://ginagomezlemus.github.io/Memoria109/miniatura.jpg">
+    <meta property="og:url" content="https://ginagomezlemus.github.io/Memoria109/">
     <meta property="og:type" content="website">
 
     <style>
@@ -92,24 +92,22 @@
         }
         .frontal img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* PIE DE PÁGINA ACTUALIZADO */
         .footer-controles {
             width: 100%; display: flex; flex-direction: column; align-items: center;
-            background-color: white; /* Fondo blanco */
+            background-color: white; 
             padding-top: 15px; z-index: 20; position: relative;
         }
 
         .enlace-web { color: var(--color-primario); text-decoration: none; font-weight: bold; font-size: 0.85rem; margin: 5px 0 10px 0; }
 
-        /* CONTENEDOR DE LA IMAGEN DE PIE DE PÁGINA */
         .banner-politico {
             width: 100%;
-            height: 75px; /* Altura fija para asegurar visibilidad */
+            height: 75px; 
             background-image: url('banner.jpeg');
             background-size: contain;
             background-position: center bottom;
             background-repeat: no-repeat;
-            background-color: white; /* Fondo blanco para la imagen */
+            background-color: white;
             margin-bottom: env(safe-area-inset-bottom);
         }
 
@@ -156,7 +154,7 @@
     </div>
 
     <div id="pantalla-menu" class="pantalla" style="display: none;">
-        <div class="cabecera-titulo"><h1 class="texto-sombra">MEMO44</h1></div>
+        <div class="cabecera-titulo"><h1 class="texto-sombra">Memoria109</h1></div>
         <div style="flex: 1;"></div>
         <div class="footer-controles">
             <div style="color: #444; margin-bottom: 10px; font-weight: bold;">Mejor Tiempo: <span id="mejor-tiempo-menu">--:--</span></div>
@@ -167,7 +165,7 @@
     </div>
 
     <div id="pantalla-juego" class="pantalla" style="display: none;">
-        <div class="cabecera-titulo"><h1 class="texto-sombra">MEMO44</h1></div>
+        <div class="cabecera-titulo"><h1 class="texto-sombra">Memoria109</h1></div>
         
         <div class="area-juego">
             <div class="stats-juego">
@@ -222,7 +220,7 @@
         }
 
         function cargarMejorTiempo() {
-            const mejor = localStorage.getItem('mejorTiempoMemo44');
+            const mejor = localStorage.getItem('mejorTiempoMemoria109');
             if (mejor) {
                 document.getElementById('mejor-tiempo-menu').innerText = formatearTiempo(mejor);
                 document.getElementById('mejor-tiempo-juego').innerText = formatearTiempo(mejor);
@@ -279,9 +277,9 @@
                             bloqueado = false;
                             if (parejasEncontradas === items.length) {
                                 clearInterval(intervaloCronometro);
-                                const recordActual = localStorage.getItem('mejorTiempoMemo44');
+                                const recordActual = localStorage.getItem('mejorTiempoMemoria109');
                                 if (!recordActual || tiempoTranscurrido < recordActual) {
-                                    localStorage.setItem('mejorTiempoMemo44', tiempoTranscurrido);
+                                    localStorage.setItem('mejorTiempoMemoria109', tiempoTranscurrido);
                                 }
                                 document.getElementById('tiempo-final').innerText = "Tu tiempo: " + document.getElementById('cronometro').innerText;
                                 setTimeout(() => { document.getElementById('mensaje-victoria').style.display = 'block'; }, 500);
@@ -305,9 +303,10 @@
         }
 
         function compartirJuego() {
-            const url = "https://leonidasnamegomez.github.io/Memo44/";
+            // URL ACTUALIZADA
+            const url = "https://ginagomezlemus.github.io/Memoria109/";
             if (navigator.share) {
-                navigator.share({ title: 'MEMO44', text: '¡Encuentra las parejas en Memo44!', url: url }).catch(() => {});
+                navigator.share({ title: 'Memoria109', text: '¡Encuentra las parejas en Memoria109!', url: url }).catch(() => {});
             } else { 
                 navigator.clipboard.writeText(url); alert("¡Enlace copiado!"); 
             }
